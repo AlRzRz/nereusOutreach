@@ -1,0 +1,748 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Quicksand", sans-serif; /* Restored Quicksand as the global font */
+    font-optical-sizing: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background-color: #0E0E10;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.page-content-wrapper {
+    flex-grow: 1;
+}
+
+.navBar {
+    background-color: rgba(26, 26, 29, 0.85); /* Slightly increased opacity */
+    backdrop-filter: blur(16px); /* Increased blur */
+    -webkit-backdrop-filter: blur(16px);
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Subtle border */
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Simplified shadow */
+}
+
+svg {
+    height: 1.5rem;
+    width: auto;
+}
+
+.hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 1rem;
+    background: none;
+    position: relative;
+}
+
+.section-transition {
+    height: 200px;
+    background: none;
+    position: relative;
+    z-index: 2;
+}
+
+.hero::after {
+    display: none;
+}
+
+#hero-bg-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+#hero-canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-content {
+    max-width: 72rem;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    background-color: rgba(14, 14, 16, 0.25); /* Adjusted for readability */
+    padding: 5rem 2rem;
+    border-radius: 0.5rem;
+    backdrop-filter: blur(5px); /* Refined blur */
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.05); /* Subtle border for definition */
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3); /* Subtle shadow for depth */
+}
+
+.hero h1 {
+    font-family: "Inter", sans-serif; /* Inter specifically for hero headline */
+    font-size: clamp(2.25rem, 6vw, 4rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.04em;
+    color: rgba(255, 255, 255, 0.98); /* Slightly brighter */
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7); /* Crisper shadow */
+}
+
+.hero p {
+    font-family: "Inter", sans-serif; /* Inter specifically for hero paragraph */
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    font-weight: 400;
+    line-height: 1.7;
+    color: rgba(230, 230, 235, 0.9);
+    margin-bottom: 2.5rem;
+    max-width: 52rem;
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: -0.01em;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5); /* Crisper shadow */
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.875rem 2rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    font-size: 0.875rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    cursor: default;
+}
+
+.btn-primary {
+    background-color: #00E1C8;
+    color: #1A1A1D;
+    border: 1px solid #00E1C8;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    animation: pulseButton 2s infinite ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 225, 200, 0.3), 0 0 20px rgba(0, 225, 200, 0.2);
+}
+
+.btn-primary:hover {
+    background-color: #00BFA9;
+    color: #0E0E10;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-1px);
+}
+
+@keyframes pulseButton {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 10px rgba(0, 225, 200, 0.3), 0 0 20px rgba(0, 225, 200, 0.2);
+    }
+    50% {
+        transform: scale(1.015);
+        box-shadow: 0 0 15px rgba(0, 225, 200, 0.4), 0 0 30px rgba(0, 225, 200, 0.25);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 10px rgba(0, 225, 200, 0.3), 0 0 20px rgba(0, 225, 200, 0.2);
+    }
+}
+
+.problem {
+    background: none;
+    padding: 6rem 1rem;
+    position: relative;
+    overflow: hidden;
+    margin-top: -200px;
+}
+
+.problem-content {
+    max-width: 60rem;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    padding-top: 200px;
+}
+
+.problem h2 {
+    font-size: clamp(1.5rem, 3vw, 1.75rem);
+    font-weight: 500;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 2.5rem;
+    text-align: center;
+    letter-spacing: -0.02em;
+}
+
+.problem-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.problem-card {
+    background: rgba(46, 46, 51, 0.3);
+    border: 1px solid #2E2E33;
+    border-radius: 1rem;
+    padding: 2rem;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.problem-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    border-color: #00E1C8;
+    box-shadow: 0 0 15px rgba(0, 225, 200, 0.3), 0 0 30px rgba(0, 225, 200, 0.2);
+}
+
+.card-icon {
+    margin-bottom: 1.5rem;
+}
+
+.card-icon svg {
+    width: 2rem;
+    height: 2rem;
+}
+
+.card-icon svg path {
+    stroke: #00E1C8;
+}
+
+.problem-card h3 {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+}
+
+.problem-card p {
+    color: rgba(196, 196, 198, 0.9);
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin: 0;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+}
+
+.problem-illustration {
+    margin-top: 4rem;
+    position: relative;
+}
+
+.network-graph {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.8;
+}
+
+.network-graph svg {
+    width: 100%;
+    height: auto;
+}
+
+/* Network Graph Animations */
+.node {
+    animation: pulse 2s infinite;
+    fill: #00E1C8;
+}
+
+.connection {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: drawLine 3s forwards;
+    stroke: #00E1C8;
+}
+
+.data-point {
+    animation: moveData 4s infinite;
+    fill: #00E1C8;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.8; }
+}
+
+@keyframes drawLine {
+    to { stroke-dashoffset: 0; }
+}
+
+@keyframes moveData {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(-100px, -50px); }
+    50% { transform: translate(100px, -50px); }
+    75% { transform: translate(-100px, 50px); }
+    100% { transform: translate(0, 0); }
+}
+
+.solution {
+    background: none;
+    padding: 6rem 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.solution-content {
+    max-width: 60rem;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.solution h2 {
+    font-size: clamp(1.5rem, 3vw, 1.75rem);
+    font-weight: 500;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 2.5rem;
+    text-align: center;
+    letter-spacing: -0.02em;
+}
+
+.solution-modules {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+
+.module-card {
+    background: rgba(46, 46, 51, 0.3);
+    border: 1px solid #2E2E33;
+    border-radius: 1rem;
+    padding: 2.5rem;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.module-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    border-color: #00E1C8;
+    box-shadow: 0 0 15px rgba(0, 225, 200, 0.3), 0 0 30px rgba(0, 225, 200, 0.2);
+}
+
+.module-icon {
+    margin-bottom: 1.5rem;
+}
+
+.module-icon svg {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.module-card h3 {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+}
+
+.module-card p {
+    color: rgba(196, 196, 198, 0.9);
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin: 0;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+}
+
+@media (max-width: 768px) {
+    .solution-modules {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .module-card {
+        padding: 2rem;
+    }
+}
+
+.how-it-works {
+    background: none;
+    padding: 6rem 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.how-it-works-content {
+    max-width: 60rem;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.how-it-works h2 {
+    font-size: clamp(1.5rem, 3vw, 1.75rem);
+    font-weight: 500;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 2.5rem;
+    text-align: center;
+    letter-spacing: -0.02em;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    position: relative;
+}
+
+.step {
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+
+.step-card {
+    background: rgba(46, 46, 51, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 
+        0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -1px rgba(0, 0, 0, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.step-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    background: rgba(46, 46, 51, 0.3);
+    border-color: rgba(0, 225, 200, 0.4);
+    box-shadow: 
+        0 8px 12px -1px rgba(0, 0, 0, 0.2),
+        0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15),
+        0 0 15px rgba(0, 225, 200, 0.3);
+}
+
+.step-card h3 {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+}
+
+.step-card p {
+    color: rgba(196, 196, 198, 0.9);
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin: 0;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+}
+
+.step-connector {
+    flex: 0 0 1rem;
+    position: relative;
+    align-self: center;
+}
+
+.step-connector::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(0, 225, 200, 0.6), transparent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.8s ease-in-out;
+}
+
+.steps.is-visible .step-connector::before {
+    transform: scaleX(1);
+}
+
+/* Delay for connectors if steps are animated individually */
+.steps.is-visible .step:nth-of-type(1) + .step-connector::before { transition-delay: 0.3s; }
+.steps.is-visible .step:nth-of-type(2) + .step-connector::before { transition-delay: 0.5s; }
+.steps.is-visible .step:nth-of-type(3) + .step-connector::before { transition-delay: 0.7s; }
+
+@media (max-width: 768px) {
+    .steps {
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    .step {
+        width: 100%;
+    }
+
+    .step-card {
+        padding: 1.25rem;
+    }
+
+    .step-connector::before {
+        width: 1px;
+        height: 100%;
+        background: linear-gradient(to bottom, transparent, rgba(0, 225, 200, 0.6), transparent);
+        left: 50%;
+        right: auto;
+        top: 0;
+        transform: scaleY(0);
+        transform-origin: top;
+    }
+
+    .steps.is-visible .step-connector::before {
+        transform: scaleY(1);
+    }
+
+    .steps.is-visible .step:nth-of-type(1) + .step-connector::before { transition-delay: 0.3s; }
+    .steps.is-visible .step:nth-of-type(2) + .step-connector::before { transition-delay: 0.5s; }
+    .steps.is-visible .step:nth-of-type(3) + .step-connector::before { transition-delay: 0.7s; }
+}
+
+.market-opportunity {
+    background: none;
+    padding: 6rem 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.market-opportunity-content {
+    max-width: 60rem;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.market-opportunity h2 {
+    font-size: clamp(1.5rem, 3vw, 1.75rem);
+    font-weight: 500;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 2.5rem;
+    text-align: center;
+    letter-spacing: -0.02em;
+}
+
+.market-intro {
+    color: rgba(196, 196, 198, 0.9);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+    text-align: center;
+    max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: 0.01em;
+}
+
+.market-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+
+.stat-block {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(46, 46, 51, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.stat-block:hover {
+    transform: translateY(-6px) scale(1.02);
+    border-color: rgba(0, 225, 200, 0.4);
+    box-shadow: 0 0 15px rgba(0, 225, 200, 0.3), 0 0 30px rgba(0, 225, 200, 0.2);
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: rgba(196, 196, 198, 0.9);
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+}
+
+@media (max-width: 768px) {
+    .market-stats {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .stat-block {
+        padding: 1.5rem;
+    }
+
+    .stat-value {
+        font-size: 2rem;
+    }
+
+    .market-intro {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+}
+
+.footer {
+    background: none;
+    padding: 6rem 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.section-bg-pulse {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(63, 140, 255, 0.05) 0%, transparent 70%);
+    z-index: 0;
+    animation: pulse 8s ease-in-out infinite;
+}
+
+.footer-bg {
+    display: none;
+}
+
+.footer-content {
+    max-width: 48rem;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.footer h2 {
+    font-size: clamp(1.5rem, 3vw, 1.75rem);
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 2.5rem;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+}
+
+.footer-cta {
+    margin-bottom: 1.5rem;
+}
+
+.footer-note {
+    display: none;
+}
+
+.footer-copyright {
+    color: rgba(196, 196, 198, 0.5);
+    font-size: 0.75rem;
+    letter-spacing: 0.01em;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 4rem 1rem;
+    }
+
+    .footer h2 {
+        font-size: 1.75rem;
+    }
+}
+
+.hero-content, .problem-content, .solution-content, .how-it-works-content, .market-opportunity-content, .footer-content {
+    position: relative;
+    z-index: 2;
+}
+
+.problem-card.is-visible, .module-card.is-visible, .step-card.is-visible, .stat-block.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Scroll animations for text elements */
+.hero h1, .hero p, section h2, .market-intro {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.hero h1.is-visible, .hero p.is-visible, section h2.is-visible, .market-intro.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered animation for hero text */
+.hero h1.is-visible { transition-delay: 0.1s; }
+.hero p.is-visible { transition-delay: 0.2s; }
+
+/* Stagger animations for cards if they are direct children of a common animated parent */
+/* This would require JS to add delays or more specific CSS selectors */
+
+/* Example: If .problem-cards is observed and gets .is-visible, then its children: */
+.problem-cards.is-visible .problem-card:nth-child(1) { transition-delay: 0.1s; }
+.problem-cards.is-visible .problem-card:nth-child(2) { transition-delay: 0.2s; }
+.problem-cards.is-visible .problem-card:nth-child(3) { transition-delay: 0.3s; }
+
+.solution-modules.is-visible .module-card:nth-child(1) { transition-delay: 0.1s; }
+.solution-modules.is-visible .module-card:nth-child(2) { transition-delay: 0.2s; }
+
+.steps.is-visible .step:nth-child(1) .step-card { transition-delay: 0.1s; }
+.steps.is-visible .step:nth-child(2) .step-card { transition-delay: 0.2s; }
+.steps.is-visible .step:nth-child(3) .step-card { transition-delay: 0.3s; }
+.steps.is-visible .step:nth-child(4) .step-card { transition-delay: 0.4s; }
+
+.market-stats.is-visible .stat-block:nth-child(1) { transition-delay: 0.1s; }
+.market-stats.is-visible .stat-block:nth-child(2) { transition-delay: 0.2s; }
+.market-stats.is-visible .stat-block:nth-child(3) { transition-delay: 0.3s; }
+.market-stats.is-visible .stat-block:nth-child(4) { transition-delay: 0.4s; }

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nereus Showcase</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="section-bg-pulse"></div>
+    <div class="navBar">
+        <?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108.89 108.89">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #d3d3d3;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <polygon class="cls-1" points="108.57 62.77 91.29 47.54 91.29 63.63 47.44 63.63 47.44 88.82 108.89 88.82 108.89 62.77 108.57 62.77"/>
+      <polygon class="cls-1" points="63.63 61.45 88.82 61.45 88.82 0 62.77 0 62.77 .32 47.54 17.61 63.63 17.61 63.63 61.45"/>
+      <polygon class="cls-1" points="61.45 20.07 0 20.07 0 46.13 .32 46.13 17.61 61.36 17.61 45.26 61.45 45.26 61.45 20.07"/>
+      <polygon class="cls-1" points="45.26 47.44 20.07 47.44 20.07 108.89 46.13 108.89 46.13 108.57 61.36 91.29 45.26 91.29 45.26 47.44"/>
+    </g>
+  </g>
+</svg>
+    </div>
+
+    <div class="page-content-wrapper">
+        <section class="hero">
+            <div id="hero-bg-particles">
+                <canvas id="hero-canvas"></canvas>
+            </div>
+            <div class="hero-content">
+                <h1>Nereus — AI-Powered Deal Intelligence for Modern M&A</h1>
+                <p>Discover and act on high-potential acquisition targets before they hit the market. Built for search funds, SMB buyers, and private equity firms.</p>
+                <div class="hero-buttons">
+                    <div class="btn btn-primary">Coming Soon...</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-transition"></div>
+
+        <section class="problem">
+            <div class="problem-content">
+                <h2>The M&A Deal Flow Problem</h2>
+                <div class="problem-cards">
+                    <div class="problem-card">
+                        <div class="card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#00E1C8" stroke-width="1.5"/>
+                                <path d="M2 17L12 22L22 17" stroke="#00E1C8" stroke-width="1.5"/>
+                                <path d="M2 12L12 17L22 12" stroke="#00E1C8" stroke-width="1.5"/>
+                            </svg>
+                        </div>
+                        <h3>Fragmented Data</h3>
+                        <p>Scattered across multiple platforms and sources</p>
+                    </div>
+                    <div class="problem-card">
+                        <div class="card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="9" stroke="#00E1C8" stroke-width="1.5"/>
+                                <path d="M12 7V12L15 15" stroke="#00E1C8" stroke-width="1.5"/>
+                            </svg>
+                        </div>
+                        <h3>Time-Consuming</h3>
+                        <p>Manual research and analysis takes weeks</p>
+                    </div>
+                    <div class="problem-card">
+                        <div class="card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#00E1C8" stroke-width="1.5"/>
+                                <path d="M12 6V12L16 14" stroke="#00E1C8" stroke-width="1.5"/>
+                            </svg>
+                        </div>
+                        <h3>Missed Opportunities</h3>
+                        <p>Deals slip through the cracks</p>
+                    </div>
+                </div>
+                <div class="problem-illustration">
+                    <div class="network-graph">
+                        <svg width="600" height="400" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Background Grid -->
+                            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#2E2E33" stroke-width="0.5"/>
+                            </pattern>
+                            <rect width="600" height="400" fill="url(#grid)"/>
+                            
+                            <!-- Network Nodes -->
+                            <circle class="node" cx="300" cy="200" r="8" fill="#3F8CFF"/>
+                            <circle class="node" cx="200" cy="150" r="6" fill="#3F8CFF"/>
+                            <circle class="node" cx="400" cy="150" r="6" fill="#3F8CFF"/>
+                            <circle class="node" cx="200" cy="250" r="6" fill="#3F8CFF"/>
+                            <circle class="node" cx="400" cy="250" r="6" fill="#3F8CFF"/>
+                            
+                            <!-- Connection Lines -->
+                            <line class="connection" x1="300" y1="200" x2="200" y2="150" stroke="#3F8CFF" stroke-width="1.5"/>
+                            <line class="connection" x1="300" y1="200" x2="400" y2="150" stroke="#3F8CFF" stroke-width="1.5"/>
+                            <line class="connection" x1="300" y1="200" x2="200" y2="250" stroke="#3F8CFF" stroke-width="1.5"/>
+                            <line class="connection" x1="300" y1="200" x2="400" y2="250" stroke="#3F8CFF" stroke-width="1.5"/>
+                            
+                            <!-- Data Flow Animation -->
+                            <circle class="data-point" cx="300" cy="200" r="2" fill="#00E1C8"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="solution">
+            <div class="solution-content">
+                <h2>Our Solution</h2>
+                <div class="solution-modules">
+                    <div class="module-card">
+                        <div class="module-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="#00E1C8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3>DealSniper</h3>
+                        <p>Real-time NLP analysis of brokered listings. Extracts, scores, and summarizes fragmented deal data so acquirers can evaluate opportunities instantly.</p>
+                    </div>
+                    <div class="module-card">
+                        <div class="module-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#00E1C8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M2 17L12 22L22 17" stroke="#00E1C8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M2 12L12 17L22 12" stroke="#00E1C8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3>Scout Engine</h3>
+                        <p>Identifies off-market acquisition targets using graph neural networks (GNNs) and behavioral signals—like executive turnover, hiring slowdowns, and digital activity.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-it-works">
+            <div class="how-it-works-content">
+                <h2>How It Works</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-card">
+                            <h3>Ingests Listings & Signals</h3>
+                            <p>Collects data from broker feeds, job boards, filings, and alt-data sources in real time.</p>
+                        </div>
+                    </div>
+                    <div class="step-connector"></div>
+                    <div class="step">
+                        <div class="step-card">
+                            <h3>Applies NLP & ML Scoring</h3>
+                            <p>Structures and analyzes each target using AI to surface risks, fit, and deal characteristics.</p>
+                        </div>
+                    </div>
+                    <div class="step-connector"></div>
+                    <div class="step">
+                        <div class="step-card">
+                            <h3>Detects Off-Market Signals</h3>
+                            <p>Uses graph neural networks to uncover hidden readiness indicators across private companies.</p>
+                        </div>
+                    </div>
+                    <div class="step-connector"></div>
+                    <div class="step">
+                        <div class="step-card">
+                            <h3>Delivers Ranked Targets</h3>
+                            <p>Outputs a clean, prioritized pipeline of deals — ready for outreach or diligence.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="market-opportunity">
+            <div class="market-opportunity-content">
+                <h2>The Timing Is Right</h2>
+                <p class="market-intro">With over $2 trillion in small business assets approaching ownership transition, and AI adoption in M&A up 167% year-over-year, dealmakers are under pressure to move faster and smarter.<br><br>
+                Nereus sits at the intersection of these trends — where legacy platforms fall short, and timing is everything.</p>
+                
+                <div class="market-stats">
+                    <div class="stat-block">
+                        <div class="stat-value">$2T+</div>
+                        <div class="stat-label">in small business assets expected to change hands this decade</div>
+                    </div>
+                    <div class="stat-block">
+                        <div class="stat-value">99.7%</div>
+                        <div class="stat-label">of U.S. businesses are SMBs — yet most are off-market</div>
+                    </div>
+                    <div class="stat-block">
+                        <div class="stat-value">167%</div>
+                        <div class="stat-label">YoY growth in AI use within corp dev and private equity</div>
+                    </div>
+                    <div class="stat-block">
+                        <div class="stat-value">$50B+</div>
+                        <div class="stat-label">projected TAM for M&A intelligence and software by 2030</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <h2>Join the Future of M&A Intelligence</h2>
+            <div class="footer-cta">
+                <div class="btn btn-primary">Coming Soon...</div>
+            </div>
+            <p class="footer-copyright">© 2025 Nereus Intelligence. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
